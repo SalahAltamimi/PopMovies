@@ -36,7 +36,7 @@ function useMovies() {
           if (query.length <= 2) return setMovies(tempMovieData);
           setisLoading(true);
           const data = await apiMovies(query);
-          setMovies(data.data.Search);
+          setMovies(data?.data?.Search);
           setisLoading(false);
         } catch (err) {
           console.error(err);

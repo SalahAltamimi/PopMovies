@@ -17,6 +17,7 @@ function Movies({ children }) {
     setwatched((w) => [...w, value]);
     setselect(null);
   }
+
   return (
     <Provider.Provider
       value={{
