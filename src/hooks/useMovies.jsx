@@ -39,9 +39,9 @@ function useMovies() {
           setMovies(data?.data?.Search);
           setisLoading(false);
         } catch (err) {
-          console.error(err);
-          seterror(err.response.data.Error);
           setisLoading(false);
+          console.error(err);
+          seterror(err?.response?.data?.Error);
         }
       }
       getApi();
