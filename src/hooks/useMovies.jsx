@@ -33,15 +33,18 @@ function useMovies() {
     function () {
       async function getApi() {
         try {
-          if (query.length <= 2) return setMovies(tempMovieData);
           setisLoading(true);
           const data = await apiMovies(query);
-          setMovies(data?.data?.Search);
+          setMovies(data.data.Search);
           setisLoading(false);
         } catch (err) {
           setisLoading(false);
           console.error(err);
           seterror(err?.response?.data?.Error);
+        } finally {
+          if (query.length <= 2) {
+            setMovies(tempMovieData);
+          }
         }
       }
       getApi();

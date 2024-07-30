@@ -13,7 +13,9 @@ function Header() {
           value={query}
           onChange={(e) => setquery(e.target.value)}
         />
-        <p className="text-xl">Found {movies?.length} results</p>
+        <p className="text-xl">
+          Found {movies?.length ? movies.length : 0} results
+        </p>
       </nav>
     </header>
   );
